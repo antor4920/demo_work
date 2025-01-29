@@ -1,6 +1,8 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Project = () => {
+  const navigate = useNavigate();
   return (
     <div>
       <h1>projects</h1>
@@ -10,6 +12,13 @@ const Project = () => {
         consectetur nihil quaerat quod id ea, itaque aliquam consequuntur
         perspiciatis eaque magnam!
       </p>
+      <button
+        onClick={() => {
+          navigate("/");
+        }}
+      >
+        Back to Home
+      </button>
     </div>
   );
 };
