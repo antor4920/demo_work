@@ -19,6 +19,13 @@ const Project = () => {
       >
         Back to Home
       </button>
+      <button
+        onClick={() => {
+          navigate("/Blogs");
+        }}
+      >
+        Blogs
+      </button>
     </div>
   );
 };
