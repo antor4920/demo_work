@@ -10,7 +10,9 @@ const Blogs = () => {
           <article key={Data.id}>
             <h1>{Data.company}</h1>
             <p>{Data.details}</p>
-            <Link to={Data.company}>Learn more</Link>
+            <Link to={Data.company} state={Data.details}>
+              Learn more
+            </Link>
           </article>
         );
       })}
