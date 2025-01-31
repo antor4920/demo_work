@@ -1,33 +1,33 @@
-export const MyData = [
+export const data = [
   {
     id: 1,
-    company: "Google",
+    country: "Bangladesh",
     details:
-      "Google Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet nisi aliquam repellendus reiciendis mollitia pariatur, in beatae iste obcaecati et optio ut corporis sequi, nulla odit quis voluptate quae neque.",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam vitae culpa doloremque repudiandae quod placeat iusto alias reiciendis inventore in, vel odio vero aut perspiciatis dolor explicabo. Officiis, at alias.",
   },
 
   {
     id: 2,
-    company: "Meta",
+    country: "Nepal",
     details:
-      "Meta Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet nisi aliquam repellendus reiciendis mollitia pariatur, in beatae iste obcaecati et optio ut corporis sequi, nulla odit quis voluptate quae neque.",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam vitae culpa doloremque repudiandae quod placeat iusto alias reiciendis inventore in, vel odio vero aut perspiciatis dolor explicabo. Officiis, at alias.",
   },
   {
     id: 3,
-    company: "SpaceX",
+    country: "Bhutan",
     details:
-      "SpaceX Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet nisi aliquam repellendus reiciendis mollitia pariatur, in beatae iste obcaecati et optio ut corporis sequi, nulla odit quis voluptate quae neque.",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam vitae culpa doloremque repudiandae quod placeat iusto alias reiciendis inventore in, vel odio vero aut perspiciatis dolor explicabo. Officiis, at alias.",
   },
   {
     id: 4,
-    company: "Amazon",
+    country: "Japan",
     details:
-      "Amazon Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet nisi aliquam repellendus reiciendis mollitia pariatur, in beatae iste obcaecati et optio ut corporis sequi, nulla odit quis voluptate quae neque.",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam vitae culpa doloremque repudiandae quod placeat iusto alias reiciendis inventore in, vel odio vero aut perspiciatis dolor explicabo. Officiis, at alias.",
   },
   {
     id: 5,
-    company: "Microsoft",
+    country: "Korea",
     details:
-      "Microsoft Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet nisi aliquam repellendus reiciendis mollitia pariatur, in beatae iste obcaecati et optio ut corporis sequi, nulla odit quis voluptate quae neque.",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam vitae culpa doloremque repudiandae quod placeat iusto alias reiciendis inventore in, vel odio vero aut perspiciatis dolor explicabo. Officiis, at alias.",
   },
 ];

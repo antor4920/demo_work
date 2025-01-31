@@ -1,0 +1,64 @@
+
+/* Navigation section */
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgb(17, 16, 17);
+    padding: 5px 0px 5px 0px;
+}
+.logo{
+    color: red;
+    font-weight: bolder;
+    font-style: italic;
+    font-size: x-large;
+}
+.UlLink{
+    display: flex;
+    gap: 40px;
+}
+.All_Link{
+    text-decoration: none;
+    color: white;
+}
+
+.All_Link:hover{
+    color: red;
+}
+
+.btn{
+    background-color: red;
+    color: black;
+    font-weight: bold;
+    border: 2px solid red;
+    border-radius: 8px;
+    padding: 4px 10px 4px 10px;
+    cursor: pointer;
+}
+
+/* home page  */
+
+.Home_body{
+    height: 87.5vh;
+  margin: 0;
+    background-image: radial-gradient(circle, #f45d37c6, #feb47b)
+}
+
+/* country_page */
+
+.country_body{
+    height: 100vh;
+    margin-top: 0px;
+  background-image: linear-gradient(45deg, #ee565b, #fad0c4);
+}
+
+.card{
+   
+    background-color: aquamarine;
+    margin: 0px;
+}
+
+.Country_name{
+   margin: 0px;
+}
