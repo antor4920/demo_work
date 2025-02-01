@@ -7,11 +7,12 @@ const Countries = () => {
     <div>
       <section className="country_body">
         {data.map((Data) => {
-          const { id, country, details } = Data;
+          const { id, image, country, details } = Data;
           return (
             <div key={id} className="card">
+              <img src={image} alt={image} />
               <h1 className="Country_name">{country}</h1>
-              <p>{details}</p>
+              <p>{details.slice(0, 100)}</p>
             </div>
           );
         })}
