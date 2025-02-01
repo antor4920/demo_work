@@ -1,9 +1,9 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import NavBar from "./Components/Layout/NavBar";
-import Index from "./Components/Pages";
-import Countries from "./Components/Pages/Countries";
-import About_us from "./Components/Pages/About_us";
+import NavBar from "./Layout/NavBar";
+import Index from "./Pages";
+import Countries from "./Pages/Countries";
+import About_us from "./Pages/About_us";
 
 function App() {
   return (

@@ -1,6 +1,6 @@
 import React from "react";
 
-import { data } from "../../Data/Data";
+import { data } from "../Data/Data";
 
 const Countries = () => {
   return (
@@ -10,9 +10,9 @@ const Countries = () => {
           const { id, image, country, details } = Data;
           return (
             <div key={id} className="card">
-              <img src={image} alt={image} />
+              <img className="CardImage" src={image} alt={image} />
               <h1 className="Country_name">{country}</h1>
-              <p>{details.slice(0, 100)}</p>
+              <p className="Country_name">{details.slice(0, 100)}</p>
             </div>
           );
         })}
