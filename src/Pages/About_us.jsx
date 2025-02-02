@@ -1,21 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import { useFormik } from "formik";
 
-const Input_Text = () => {
+// -----------------------Input component --------------------------------------
+
+const Input_Text = ({ Box }) => {
   const formik = useFormik({
     initialValues: {
       companyname: "",
       position: "",
       details: "",
     },
-    onSubmit: (values) => {
-      console.log(values);
+    onSubmit: (values, { resetForm }) => {
+      Box(values);
+      resetForm((values = ""));
     },
   });
 
   return (
     <div>
-      <form onSubmit={formik.onSubmit}>
+      <form onSubmit={formik.handleSubmit}>
         <div>
           <label>Company Name:</label>
           <input
@@ -55,10 +58,47 @@ const Input_Text = () => {
   );
 };
 
-const About_us = () => {
+// ----------------------Mapping component-------------------------------------------------------------
+
+const MappingT = (props) => {
   return (
     <div>
-      <Input_Text />
+      {props.mappingItem.map((item, index) => {
+        const { companyname, position, details } = item;
+        return (
+          <div>
+            <h1>{companyname}</h1>
+            <h2>{position}</h2>
+            <h4>{details}</h4>
+          </div>
+        );
+      })}
+    </div>
+  );
+};
+
+// -------------------------- Main page-------------------------------------------------------------------
+
+const Arrr = [
+  {
+    companyname: "Google",
+    position: "Unknown",
+    details:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint ipsum quasi aliquid unde illo quisquam nemo dolore eos autem? Iusto!",
+  },
+];
+const About_us = () => {
+  const [inputItem, setinputItem] = useState(Arrr);
+
+  const box = (event) => {
+    setinputItem([...inputItem, event]);
+  };
+
+  return (
+    <div>
+      <Input_Text Box={box} />
+      {/* <p>{inputItem.position}</p> */}
+      <MappingT mappingItem={inputItem} />
     </div>
   );
 };
