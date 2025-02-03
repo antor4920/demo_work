@@ -66,7 +66,7 @@ const MappingT = (props) => {
       {props.mappingItem.map((item, index) => {
         const { companyname, position, details } = item;
         return (
-          <div>
+          <div key={index}>
             <h1>{companyname}</h1>
             <h2>{position}</h2>
             <h4>{details}</h4>
