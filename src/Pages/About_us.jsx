@@ -62,18 +62,24 @@ const Input_Text = ({ Box }) => {
 
 const MappingT = (props) => {
   return (
-    <div>
+    <div className="info_box">
       {props.mappingItem.map((item, index) => {
-        const { companyname, position, details } = item;
-        return (
-          <div key={index}>
-            <h1>{companyname}</h1>
-            <h2>{position}</h2>
-            <h4>{details}</h4>
-          </div>
-        );
+        return <MapItem key={index} Item={item} />;
       })}
     </div>
+  );
+};
+
+const MapItem = (props) => {
+  const { companyname, position, details } = props.Item;
+  return (
+    <article>
+      <div className="Div1">
+        <h1>{companyname}</h1>
+        <h2>{position}</h2>
+        <h4>{details}</h4>
+      </div>
+    </article>
   );
 };
 

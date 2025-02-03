@@ -90,3 +90,16 @@ gap: 1rem;
     padding-top: 10px;
    margin: 0px;
 }
+
+/* -----About Us */
+
+.info_box{
+    background-color: antiquewhite;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(3, 1fr) ;
+}
+
+.Div1{
+    background-color: aqua;
+}
