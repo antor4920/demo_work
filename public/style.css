@@ -31,7 +31,7 @@ nav{
     background-color: red;
     color: black;
     font-weight: bold;
-    border: 2px solid red;
+    border: 2px solid rgb(0, 0, 0);
     border-radius: 8px;
     padding: 4px 10px 4px 10px;
     cursor: pointer;
@@ -94,12 +94,39 @@ gap: 1rem;
 /* -----About Us */
 
 .info_box{
-    background-color: antiquewhite;
+    background-color: rgb(147, 144, 140);
     display: grid;
     gap: 10px;
     grid-template-columns: repeat(3, 1fr) ;
+    padding: 10px;
 }
 
 .Div1{
     background-color: aqua;
+    height: 200px;
+    padding: 10px;
+}
+
+.Input_Container{
+    background-color: rgb(174, 159, 159);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+.Form{
+    /* background-color: green; */
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+    gap: 10px;
+}
+
+.Input_label_container{
+    /* background-color: yellow; */
+   width: 100%;
+   display: flex;
+justify-content: space-between;
 }

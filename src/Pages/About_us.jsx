@@ -17,9 +17,9 @@ const Input_Text = ({ Box }) => {
   });
 
   return (
-    <div>
-      <form onSubmit={formik.handleSubmit}>
-        <div>
+    <div className="Input_Container">
+      <form onSubmit={formik.handleSubmit} className="Form">
+        <div className="Input_label_container">
           <label>Company Name:</label>
           <input
             type="text"
@@ -30,7 +30,7 @@ const Input_Text = ({ Box }) => {
             required
           />
         </div>
-        <div>
+        <div className="Input_label_container">
           <label>Position:</label>
           <input
             type="text"
@@ -41,7 +41,7 @@ const Input_Text = ({ Box }) => {
             required
           />
         </div>
-        <div>
+        <div className="Input_label_container">
           <label>Details:</label>
           <input
             type="text"
@@ -52,7 +52,9 @@ const Input_Text = ({ Box }) => {
             required
           />
         </div>
-        <button type="submit">Submit</button>
+        <button type="submit" className="btn">
+          Submit
+        </button>
       </form>
     </div>
   );
@@ -75,9 +77,9 @@ const MapItem = (props) => {
   return (
     <article>
       <div className="Div1">
-        <h1>{companyname}</h1>
-        <h2>{position}</h2>
-        <h4>{details}</h4>
+        <h1 className="Country_name">{companyname}</h1>
+        <h3 className="Country_name">{position}</h3>
+        <p className="Country_name">{details}</p>
       </div>
     </article>
   );
