@@ -1,26 +1,40 @@
-import React, { useState } from "react";
-
-let num = 0;
+import React, { useEffect, useState } from "react";
 
 const Index = () => {
-  const [time, settime] = useState(num);
+  const [time, setTime] = useState(0);
+  const [isRunning, SetisRunning] = useState(false);
+
+  useEffect(() => {
+    let interval;
+    if (isRunning) {
+      interval = setInterval(() => {
+        setTime((time) => time + 1);
+      }, 1000);
+    }
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, [isRunning]);
 
   return (
     <section className="Home_body">
       <p>{time}</p>
+
       <button
         onClick={() => {
-          settime(time + 1);
+          SetisRunning(true);
         }}
       >
         start
       </button>
+
       <button
         onClick={() => {
-          settime(num);
+          SetisRunning(false);
         }}
       >
-        reset
+        stop
       </button>
     </section>
   );
