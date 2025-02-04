@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useFormik } from "formik";
 
 // -----------------------Input component --------------------------------------
-
 const Input_Text = ({ Box }) => {
   const formik = useFormik({
     initialValues: {
@@ -20,7 +19,7 @@ const Input_Text = ({ Box }) => {
     <div className="Input_Container">
       <form onSubmit={formik.handleSubmit} className="Form">
         <div className="Input_label_container">
-          <label>Company Name:</label>
+          <label htmlFor="companyname">Company Name:</label>
           <input
             type="text"
             id="companyname"
@@ -31,7 +30,7 @@ const Input_Text = ({ Box }) => {
           />
         </div>
         <div className="Input_label_container">
-          <label>Position:</label>
+          <label htmlFor="position">Position:</label>
           <input
             type="text"
             id="position"
@@ -42,7 +41,7 @@ const Input_Text = ({ Box }) => {
           />
         </div>
         <div className="Input_label_container">
-          <label>Details:</label>
+          <label htmlFor="details">Details:</label>
           <input
             type="text"
             id="details"
@@ -59,19 +58,16 @@ const Input_Text = ({ Box }) => {
     </div>
   );
 };
-
 // ----------------------Mapping component-------------------------------------------------------------
-
 const MappingT = (props) => {
   return (
     <div className="info_box">
       {props.mappingItem.map((item, index) => {
-        return <MapItem key={index} Item={item} />;
+        return <MapItem key={index} Item={item.item} />;
       })}
     </div>
   );
 };
-
 const MapItem = (props) => {
   const { companyname, position, details } = props.Item;
   return (
@@ -84,22 +80,22 @@ const MapItem = (props) => {
     </article>
   );
 };
-
 // -------------------------- Main page-------------------------------------------------------------------
-
-const Arrr = [
-  {
-    companyname: "Google",
-    position: "Unknown",
-    details:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint ipsum quasi aliquid unde illo quisquam nemo dolore eos autem? Iusto!",
-  },
-];
+// const Arrr = [
+//   {
+//     companyname: "Google",
+//     position: "Unknown",
+//     details:
+//       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint ipsum quasi aliquid unde illo quisquam nemo dolore eos autem? Iusto!",
+//   },
+// ];
 const About_us = () => {
-  const [inputItem, setinputItem] = useState(Arrr);
+  const [inputItem, setinputItem] = useState([]);
 
-  const box = (event) => {
-    setinputItem([...inputItem, event]);
+  const box = (item) => {
+    setinputItem((prevItem) => {
+      return [...prevItem, { item }];
+    });
   };
 
   return (
