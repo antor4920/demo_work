@@ -15,6 +15,9 @@ const NavBar = () => {
         <Link className="All_Link" to="/about_us">
           About Us
         </Link>
+        <Link className="All_Link" to="/search_bar">
+          Search
+        </Link>
       </ul>
       <button className="btn">Contact Us</button>
     </nav>
