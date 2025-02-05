@@ -45,6 +45,12 @@ const ProductSearch = () => {
     }
   };
 
+  const handleSelect = (product) => {
+    setQuery("");
+    setSelectedProduct(product);
+    setFilteredProducts([]);
+  };
+
   console.log(filteredProducts);
 
   return (
@@ -55,7 +61,22 @@ const ProductSearch = () => {
         value={query}
         onChange={search}
       />
-      <h2>{filteredProducts.name}</h2>
+      {filteredProducts.length > 0 && (
+        <ul>
+          {filteredProducts.map((product, index) => (
+            <li key={index} onClick={() => handleSelect(product)}>
+              {product.name}
+            </li>
+          ))}
+        </ul>
+      )}
+
+      {selectedProduct && (
+        <div>
+          <h1>{selectedProduct.name}</h1>
+          <p>{selectedProduct.description}</p>
+        </div>
+      )}
     </div>
   );
 };
