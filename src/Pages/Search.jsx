@@ -1,80 +1,68 @@
 import React, { useState } from "react";
 
-const products = [
-  {
-    id: 1,
-    name: "iPhone 15",
-    price: "$999",
-    description: "Latest Apple smartphone.",
-  },
-  {
-    id: 2,
-    name: "Samsung Galaxy S23",
-    price: "$899",
-    description: "Flagship Samsung phone.",
-  },
-  {
-    id: 3,
-    name: "MacBook Air",
-    price: "$1199",
-    description: "Lightweight Apple laptop.",
-  },
-  {
-    id: 4,
-    name: "Sony Headphones",
-    price: "$199",
-    description: "Noise-canceling headphones.",
-  },
-];
+import { data } from "../Data/Data";
 
 const ProductSearch = () => {
-  const [query, setQuery] = useState("");
-  const [filteredProducts, setFilteredProducts] = useState([]);
-  const [selectedProduct, setSelectedProduct] = useState(null);
-  const search = (e) => {
-    let valuess = e.target.value;
-    setQuery(valuess);
+  const [searchInput, setsearchInput] = useState("");
+  const [findProduct, setfindProduct] = useState([]);
+  const [selecItem, setSelectItem] = useState();
 
-    if (valuess) {
-      const results = products.filter((item) =>
-        item.name.toLowerCase().includes(valuess.toLowerCase())
+  const handleSearch = (event) => {
+    let searchItem = event.target.value;
+    setsearchInput(searchItem);
+
+    if (searchItem) {
+      let result = data.filter((product) =>
+        product.country.toLowerCase().includes(searchItem.toLowerCase())
       );
-      setFilteredProducts(results);
+      setfindProduct(result);
     } else {
-      setFilteredProducts([]);
+      setfindProduct([]);
     }
   };
 
-  const handleSelect = (product) => {
-    setQuery("");
-    setSelectedProduct(product);
-    setFilteredProducts([]);
+  const showItem = (item) => {
+    setSelectItem(item);
+    setfindProduct([]);
+    setsearchInput("");
   };
-
-  console.log(filteredProducts);
 
   return (
     <div>
-      <input
-        type="text"
-        placeholder="search people by name...."
-        value={query}
-        onChange={search}
-      />
-      {filteredProducts.length > 0 && (
-        <ul>
-          {filteredProducts.map((product, index) => (
-            <li key={index} onClick={() => handleSelect(product)}>
-              {product.name}
+      <div className="Search_box">
+        <input
+          className="Search_inputfield"
+          type="text"
+          placeholder="Find people by search here..."
+          value={searchInput}
+          onChange={handleSearch}
+        />
+      </div>
+
+      {findProduct.length > 0 && (
+        <div className="Search_list_box">
+          {findProduct.map((item) => (
+            <li
+              className="Search_list"
+              key={item.id}
+              onClick={() => showItem(item)}
+            >
+              {item.country}
             </li>
           ))}
-        </ul>
+        </div>
       )}
 
-      {selectedProduct && (
-        <div>
-          <h1>{selectedProduct.name}</h1>
-          <p>{selectedProduct.description}</p>
+      {selecItem && (
+        <div className="details_box">
+          <h3>{selecItem.country}</h3>
+          <p>{selecItem.details}</p>
+
+          <img
+            className="mage_div"
+            src={selecItem.image}
+            alt={selecItem.image}
+          />
         </div>
       )}
     </div>
