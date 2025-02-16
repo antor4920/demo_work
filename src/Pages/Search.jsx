@@ -58,11 +58,11 @@ const ProductSearch = () => {
           <h3>{selecItem.country}</h3>
           <p>{selecItem.details}</p>
 
-          <img
+          {/* <img
             className="mage_div"
             src={selecItem.image}
             alt={selecItem.image}
-          />
+          /> */}
         </div>
       )}
     </div>
